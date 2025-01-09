@@ -1,0 +1,44 @@
+audio:
+  sr: 44100
+  max_l: 4
+
+train:
+  epochs: 1000
+  batch_size: 32
+  gradient_accumulation_steps: 1
+  steps_epoch: 50
+  targets: ["cymbals", "hihat", "kick", "snare", "toms"]
+  use_amp: true
+  lr: 5.43e-5
+  patience: 2
+  reduce_factor: 0.98
+  grad_clip: 10
+  weight_decay: 0.05
+  
+
+model:
+  nfft: 4096
+  growth: 4
+  conv_depth: 3
+  bidir: True
+
+augmentations:
+  enable: True
+  #indicate probabilities here
+  channel_swap: 0.3
+  stereo_img_change: 0.05
+  stereo_img_change_dmin: 0.001
+  stereo_img_change_dmax: 0.5
+  reverse_polarity: 0.1
+  pitchshift: 0.1
+  pitchshift_range: 3 #3 up, 3 down. May be changed in the future
+  time_translation: 0.05
+  time_translation_max_samples: 4410 #0.1 seconds
+  distort: 0.1
+  distort_max_db_gain: 30 #30 dB sounds somewhat distorted
+  mp3compression: 0.01
+  mp3compression_max_q: 5 #0 is max quality here
+  add_noise: 0.01
+  add_noise_min_snr: 3
+  add_noise_max_snr: 20 #20 is perceptually perfect
+  priority: ["channel_swap","reverse_polarity","stereo_img_change","pitchshift","time_translation","distort","add_noise","mp3compression"] #this is the actual effect chain!
