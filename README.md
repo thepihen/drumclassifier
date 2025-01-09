@@ -28,7 +28,7 @@ The network was trained on a private dataset containing on average 425 samples p
 
 A test set containing 80 samples per class was built using unseen samples from the same sources, and a second, smaller one was made using completely new samples from different sources to assess the impact of data source biases and overfitting.
 
-Results on the main test set indicate an accuracy of over 90% on all classes but _hihat_, where a respectable 86.25% was instead reached. Overfitting and biases are indeed present, but they do not seem to significantly impact results on new data.
+Results on the main test set indicate an accuracy of over 90% on all classes but _hihat_, where a respectable 86.25% was instead reached. Overfitting and biases are indeed present, but they do not seem to significantly impact results on new data on the second test set.
 
 ## Data augmentation techniques
 The following data augmentation techniques were employed during training:
