@@ -4,6 +4,7 @@ I feel like this is getting a bit repetitive but... DrumClassifier is a drum cla
 
 ## Usage
 First of all, **get the model weights from the Releases tab!**
+
 For convenience, a wrapper for the model (_classifier.py_) is included. Simply create a _DrumClassifier_ object, passing it the appropriate _weights_path_ and _cfg_path_, and classify data using either _classify()_ or _classify_from_path()_ depending on your needs.
 
 If you wish to quickly test the model with your own sample:
